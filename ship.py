@@ -26,3 +26,4 @@ class Ship:
         if False not in self.hits:
             self.sunk = True
         print(self)
+        return self.sunk

@@ -36,23 +36,44 @@ class Board:
                 table.append(new_row)
                 
         #Return formatted table
-        return (tabulate(table, header, showindex=rows, tablefmt="fancy_grid"))
+        return (tabulate(table, header, showindex=rows, numalign="center", stralign="center", tablefmt="fancy_grid"))
     
     def place_ship (self, ship):
-        start = [random.randint(0,self.rows -1), random.randint(0, self.columns-1)]
         orientation = random.choice(["horizontal", "vertical"])
         coordinates = []
         if orientation == "horizontal":
             #Place ship horizontally
-            while (start[1] + ship.length > self.columns):
-                start[1] -=1
+            #Check to make sure the starting point will not result in the ship being placed off the map
+            while True:
+                start = [random.randint(0,self.rows -1), random.randint(0, self.columns-1)]
+                while (start[1] + ship.length > self.columns):
+                    start[1] -=1
+                #Check to make sure the ship will not be placed over top of another ship
+                unique = True
+                for i in range(ship.length):
+                    if self.board[start[0]][start[1]+i] != "":
+                        unique = False
+                        break
+                if unique == True:
+                    break
             for i in range(ship.length):
                 self.board[start[0]][start[1]+i] = ship.name[0]
                 coordinates.append([start[0],start[1]+i])
         else:
             #Place ship vertically
-            while (start[0] + ship.length > self.rows):
-                start[0] -=1
+            #Check to make sure the starting point will not result in the ship being placed off the map
+            while True:
+                start = [random.randint(0,self.rows -1), random.randint(0, self.columns-1)]
+                while (start[0] + ship.length > self.rows):
+                    start[0] -=1
+                #Check to make sure the ship will not be placed over top of another ship
+                unique = True
+                for i in range(ship.length):
+                    if self.board[start[0]+i][start[1]] != "":
+                        unique = False
+                        break
+                if unique == True:
+                    break
             for i in range(ship.length):
                 self.board[start[0]+i][start[1]] = ship.name[0]
                 coordinates.append([start[0]+i,start[1]])

@@ -34,13 +34,13 @@ to follow
 ## Features
 List of features:
 * Create a game board with 3 different size options depending on difficulty selected
-* Randomly place 1 ship, a battleship on the board
+* Randomly place different numbers of ships on the board depending on difficulty selected
 * Input coordinates to try and attack the battleship
 * Inform when there is a hit or a miss and update the board
-* Indication of successfully sinking the battleship
+* Indication of successfully sinking a ship
 
 To-do list:
-* Add ability to include more than 1 ship
+* User input validation
 * Score counter
 * Add 2 player functionality
 
