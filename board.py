@@ -2,10 +2,10 @@ import random
 from tabulate import tabulate
 
 class Board:
-    def __init__ (self, name, rows, columns):
+    def __init__ (self, name, size):
         self.name = name
-        self.rows = rows
-        self.columns = columns
+        self.rows = size[0]
+        self.columns = size[1]
         self.board = []
         for i in range(self.rows):
             row = []

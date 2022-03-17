@@ -23,7 +23,7 @@ This project was started as part of the Computer Science program with codecademy
 * Python - Version 3.10.2
 
 ## Setup
-Save all files into the same folder and run the following from a terminal window:
+Save all files into the same folder. Must have the tabulate package installed. Then run the following from a terminal window:
 ```console
     python battleship.py
 ```
