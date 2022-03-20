@@ -38,11 +38,11 @@ List of features:
 * Input coordinates to try and attack the battleship
 * Inform when there is a hit or a miss and update the board
 * Indication of successfully sinking a ship
+* Can play 1 or 2 players
 
 To-do list:
 * User input validation
 * Score counter
-* Add 2 player functionality
 
 ## Status
 Project is: _in progress_
