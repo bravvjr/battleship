@@ -83,13 +83,13 @@ class Board:
     def update_board (self, coordinate):
         if self.board[coordinate[0]][coordinate[1]] == "":
             self.board[coordinate[0]][coordinate[1]] = "O"
-            print("You missed")
-            print(self.print_board())
+            print(self.print_board(False))
+            print("\nYou missed\n")
             return "miss"
         else:
-            print("You hit")
             self.board[coordinate[0]][coordinate[1]] = "X"
-            print(self.print_board())
+            print(self.print_board(False))
+            print("\nYou hit\n")
             return "hit"
         
         
